@@ -14,6 +14,7 @@ public class ClienteCDTDigitalController implements V1UsuarioApi {
     private static final Logger LOG = LoggerFactory.getLogger(ClienteCDTDigitalController.class);
     @Inject
     ClienteCDTDigitalImpl clienteCDTDigitalImpl;
+    
     @Override
     public Response crearClienteCDTDigital(ClienteCDTDigitalType clienteCDTDigitalType) {
         LOG.info("Inicia proceso de crear cliente CDT digital controller");
