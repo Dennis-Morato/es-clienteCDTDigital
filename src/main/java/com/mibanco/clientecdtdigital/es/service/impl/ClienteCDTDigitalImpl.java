@@ -30,7 +30,7 @@ public class ClienteCDTDigitalImpl implements IClienteCDTDigital {
            clienteCDTDigitalDao.persist(clienteCDTDigital);
        }catch (ApplicationException e){
             LOG.error(Constant.ERROR_SERVICIO + e.getMessage() + "crear cliente CDT digital impl");
-            throw new ApplicationException(ERROR_SERVICIO + e.getMessage());
+            throw new ApplicationException(ERROR_SERVICIO + e.getMessage() + "crear cliente CDT digital impl");
        }
         LOG.info("Finaliza proceso de creacion de cliente CDT digital impl");
         return clienteCDTDigitalType;
