@@ -29,7 +29,7 @@ public class ClienteCDTDigitalImpl implements IClienteCDTDigital {
            ClienteCDTDigital clienteCDTDigital = clienteCDTDigitalMapper.clienteCDTDigitalTypeToEntity(clienteCDTDigitalType);
            clienteCDTDigitalDao.persist(clienteCDTDigital);
        }catch (ApplicationException e){
-            LOG.error("Se presento el siguiente erro creando el cliente CDT digital impl: " + e.getMessage());
+            LOG.error(Constant.ERROR_SERVICIO + e.getMessage() + "crear cliente CDT digital impl");
             throw new ApplicationException(ERROR_SERVICIO + e.getMessage());
        }
         LOG.info("Finaliza proceso de creacion de cliente CDT digital impl");
