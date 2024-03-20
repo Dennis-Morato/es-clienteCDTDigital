@@ -19,7 +19,7 @@ public class ClienteCDTDigitalController implements V1UsuarioApi {
         LOG.info("Inicia proceso de crear cliente CDT digital controller");
         ClienteCDTDigitalType clienteCDTDigitalTypeResponce = null;
         try {
-            clienteCDTDigitalTypeResponce = clienteCDTDigitalImpl.crearClienteCdtDigital(clienteCDTDigitalType);
+            clienteCDTDigitalTypeResponce = clienteCDTDigitalImpl.crearClienteCDTDigital(clienteCDTDigitalType);
         }catch (ApplicationException e){
             LOG.error(Constant.ERROR_SERVICIO + e.getMessage() + "crear cliente CDT digital controller");
             return Response.status(Response.Status.BAD_REQUEST).entity(clienteCDTDigitalType).build();
