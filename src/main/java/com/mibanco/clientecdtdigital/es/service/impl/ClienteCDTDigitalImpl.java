@@ -23,7 +23,7 @@ public class ClienteCDTDigitalImpl implements IClienteCDTDigital {
     ClienteCDTDigitalDao clienteCDTDigitalDao;
 
     @Transactional
-    public ClienteCDTDigitalType crearClienteCdtDigital(ClienteCDTDigitalType clienteCDTDigitalType) {
+    public ClienteCDTDigitalType crearClienteCDTDigital(ClienteCDTDigitalType clienteCDTDigitalType) {
         LOG.info("Inicia proceso de crear cliente CDT digital impl");
        try{
            ClienteCDTDigital clienteCDTDigital = clienteCDTDigitalMapper.clienteCDTDigitalTypeToEntity(clienteCDTDigitalType);
