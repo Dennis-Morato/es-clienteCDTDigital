@@ -15,7 +15,7 @@ public class ClienteCDTDigitalController implements V1UsuarioApi {
     @Inject
     ClienteCDTDigitalImpl clienteCDTDigitalImpl;
     @Override
-    public Response crearClienteCdtDigital(ClienteCDTDigitalType clienteCDTDigitalType) {
+    public Response crearClienteCDTDigital(ClienteCDTDigitalType clienteCDTDigitalType) {
         LOG.info("Inicia proceso de crear cliente CDT digital controller");
         ClienteCDTDigitalType clienteCDTDigitalTypeResponce = null;
         try {
