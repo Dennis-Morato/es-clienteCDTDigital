@@ -67,6 +67,6 @@ public class ClienteCDTDigitalGraphQLController {
         } catch (ApplicationException e) {
             LOG.error(Constant.ERROR_SERVICIO + e.getMessage() + "editar cliente CDT digital GraphQl controller");
         }
-        LOG.info("Finaliza el proceso de editar cliente CDT digital GraphQl controller");
+        LOG.info("Finaliza el proceso de editar cliente CDT digital GraphQl controller ");
     }
 }
