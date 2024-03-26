@@ -104,5 +104,4 @@ public class ClienteCDTDigitalImpl implements IClienteCDTDigital {
         return clienteCDTDigitalMapper.clientesCDTDigitalsTypeListEntityToType(clienteCDTDigitals);
     }
 
-
 }
