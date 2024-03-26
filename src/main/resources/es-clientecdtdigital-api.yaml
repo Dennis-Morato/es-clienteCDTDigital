@@ -16,16 +16,16 @@ info:
     name: GNU GPLv3
     url: ‘https://www.gnu.org/licenses/gpl-3.0.html’
 tags:
-  - name: Cliente cdt digital
-    description: Cliente cdt digital
+  - name: Cliente CDT Digital
+    description: Cliente CDT Digital
 
 #---------------------------------------------------------------------------------
 paths:
-  /v1/es/crearClienteCdtDigital:
+  /v1/es/crearClienteCDTDigital:
     post:
       tags:
         - Crear cliente cdt digital
-      operationId: crearClienteCdtDigital
+      operationId: crearClienteCDTDigital
       requestBody:
         description: Crear cliente cdt digital
         content:
@@ -46,6 +46,112 @@ paths:
         "404":
           description: "No se encuentra la novedad."
 
+#-------------------------------------------------------------------------------------
+
+  /v1/es/buscarClienteCDTDigital/{id_cliente}:
+    get:
+      tags:
+        - Buscar cliente cdt digital
+      operationId: buscarClienteCDTDigital
+      parameters:
+        - in: path
+          name: id_cliente
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+          description: Id clienteCDTDigital
+      responses:
+        "200":
+          description: Usuario encontrado.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ClienteCDTDigitalType"
+        "400":
+          description: "Parámetros de entrada no validos."
+        "404":
+          description: "No se encuentra la novedad."
+
+#-------------------------------------------------------------------------------------
+
+  /v1/es/editarClienteCDTDigital/{id_cliente}:
+      put:
+        tags:
+          - Buscar cliente cdt digital
+        operationId: editarClienteCDTDigital
+        parameters:
+          - in: path
+            name: id_cliente
+            required: true
+            schema:
+              type: integer
+              minimum: 1
+            description: Editar clienteCDTDigital
+        requestBody:
+          description: Editar cliente cdt digital
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ClienteCDTDigitalType"
+        responses:
+          "200":
+            description: Usuario encontrado.
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: "#/components/schemas/ClienteCDTDigitalType"
+          "400":
+            description: "Parámetros de entrada no validos."
+          "404":
+            description: "No se encuentra la novedad."
+
+#-------------------------------------------------------------------------------------
+
+  /v1/es/eliminarClienteCDTDigital/{id_cliente}:
+      delete:
+        tags:
+          - Buscar cliente cdt digital
+        operationId: eliminarClienteCDTDigital
+        parameters:
+          - in: path
+            name: id_cliente
+            required: true
+            schema:
+              type: integer
+              minimum: 1
+            description: eliminar clienteCDTDigital por id
+        responses:
+          "200":
+            description: Usuario eliminado.
+          "400":
+            description: "Parámetros de entrada no validos."
+          "404":
+            description: "No se encuentra la novedad."
+
+#------------------------------------------------------------------------------
+  /v1/es/listarTodosLosClientesCDTDigital:
+    get:
+      tags:
+        - Listar todos los clientes CDT Digital
+      operationId: listarTodosLosClientesCDTDigital
+      responses:
+        "200":
+          description: Listar Usuarios
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ClienteCDTDigitalType"
+        "400":
+          description: "Parámetros de entrada no validos."
+        "404":
+          description: "No se encuentra la novedad."
 
 components:
   schemas:
