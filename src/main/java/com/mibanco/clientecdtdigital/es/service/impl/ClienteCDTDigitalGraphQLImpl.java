@@ -1,5 +1,6 @@
 package com.mibanco.clientecdtdigital.es.service.impl;
 
+import com.mibanco.clientecdtdigital.es.constant.Constant;
 import com.mibanco.clientecdtdigital.es.dao.ClienteCDTDigitalGraphQLDao;
 import com.mibanco.clientecdtdigital.es.entity.ClienteCDTDigitalGraphQL;
 import com.mibanco.clientecdtdigital.es.service.contract.IClienteCDTDigitalGraphQL;
@@ -24,14 +25,14 @@ public class ClienteCDTDigitalGraphQLImpl implements IClienteCDTDigitalGraphQL {
     ClienteCDTDigitalGraphQLDao clienteCDTDigitalGraphQLDao;
 
     public List<ClienteCDTDigitalGraphQL> obtenerTodosLosClienteCDTDigitalImpl(){
-        LOG.info("Inicia el proceso de obtenerTodosLosClienteCDTDigitalImpl Impl");
+        LOG.info("Inicia el proceso de obtener Cliente CDT Digital graphQL Impl");
         List<ClienteCDTDigitalGraphQL> allClient = null;
         try{
             allClient = clienteCDTDigitalGraphQLDao.listAll();
         }catch(ApplicationException e){
-            LOG.error("Error en el proceso de obtenerTodosLosClienteCDTDigitalImpl Impl: " + e.getMessage());
+            LOG.error(Constant.ERROR_SERVICIO + e.getMessage() + " obtener Cliente CDT Digital graphQL Impl");
         }
-        LOG.info("Finaliza el proceso de obtenerTodosLosClienteCDTDigitalImpl Impl");
+        LOG.info("Finaliza el proceso de  obtener Cliente CDT Digital graphQL Impl");
         return allClient;
     }
 
@@ -43,20 +44,34 @@ public class ClienteCDTDigitalGraphQLImpl implements IClienteCDTDigitalGraphQL {
             clienteCDTDigitalGraphQL = clienteCDTDigitalGraphQLMapper.clienteCDTDigitalTypeToEntity(clienteCDTDigitalGraphQLType);
             clienteCDTDigitalGraphQLDao.persist(clienteCDTDigitalGraphQL);
         }catch(ApplicationException e){
-            LOG.error("Error en el proceso de crearClienteCDTDigitalImpl Impl: " + e.getMessage());
+            LOG.error(Constant.ERROR_SERVICIO + e.getMessage() + " crear Cliente CDT Digital graphQL Impl");
         }
-        LOG.info("Finaliza el proceso de crearClienteCDTDigitalImpl Impl");
+        LOG.info("Finaliza el proceso de  crear Cliente CDT Digital graphQL Impl");
         return clienteCDTDigitalGraphQL;
     }
 
     @Transactional
     public void eliminarClienteCDTDigitalImpl(Long id){
-        LOG.info("Inicia el proceso de crearClienteCDTDigitalImpl Impl");
+        LOG.info("Inicia el proceso de  eliminar Cliente CDT Digital graphQL Impl");
         try{
             clienteCDTDigitalGraphQLDao.deleteById(id);
         }catch(ApplicationException e){
-            LOG.error("Error en el proceso de crearClienteCDTDigitalImpl Impl: " + e.getMessage());
+            LOG.error(Constant.ERROR_SERVICIO + e.getMessage() + " eliminar Cliente CDT Digital graphQL Impl");
         }
-        LOG.info("Finaliza el proceso de crearClienteCDTDigitalImpl Impl");
+        LOG.info("Finaliza el proceso de eliminar Cliente CDT Digital graphQL Impl");
+    }
+
+    @Transactional
+    public void editarClienteCDTDigitalImpl(Long id ,ClienteCDTDigitalGraphQL clienteCDTDigitalGraphQL ){
+        LOG.info("Inicia el proceso de editar Cliente CDT Digital graphQL Impl");
+        try{
+            clienteCDTDigitalGraphQL = clienteCDTDigitalGraphQLDao.findById(id);
+            clienteCDTDigitalGraphQL.setFechaNacimientoAno(clienteCDTDigitalGraphQL.getFechaNacimientoAno());
+            clienteCDTDigitalGraphQL.setFechaNacimientoMes(clienteCDTDigitalGraphQL.getFechaNacimientoMes());
+            clienteCDTDigitalGraphQL.setFechaNacimientoDia(clienteCDTDigitalGraphQL.getFechaNacimientoDia());
+        }catch(ApplicationException e){
+            LOG.error(Constant.ERROR_SERVICIO + e.getMessage() + "editar Cliente CDT Digital graphQL Impl");
+        }
+        LOG.info("Finaliza el proceso de editar Cliente CDT Digital graphQL Impl");
     }
 }
