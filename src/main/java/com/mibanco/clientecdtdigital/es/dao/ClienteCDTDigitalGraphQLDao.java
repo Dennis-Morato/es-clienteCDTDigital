@@ -1,10 +1,10 @@
 package com.mibanco.clientecdtdigital.es.dao;
 
-import com.mibanco.clientecdtdigital.es.entity.ClienteCDTDigital;
+import com.mibanco.clientecdtdigital.es.entity.ClienteCDTDigitalGraphQL;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
-public class ClienteCDTDigitalDao implements PanacheRepository<ClienteCDTDigital> {
+public class ClienteCDTDigitalGraphQLDao implements PanacheRepository<ClienteCDTDigitalGraphQL> {
 }
 

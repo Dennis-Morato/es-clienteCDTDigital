@@ -15,7 +15,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Entity
 @Table(name = "clienteCDTDigital")
-public class ClienteCDTDigital implements Serializable {
+public class ClienteCDTDigitalGraphQL implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
