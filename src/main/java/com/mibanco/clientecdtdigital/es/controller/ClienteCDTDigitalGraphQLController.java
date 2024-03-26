@@ -35,7 +35,7 @@ public class ClienteCDTDigitalGraphQLController{
         return allClient;
     }
     @Mutation("crearClienteCDTDigital")
-    public ClienteCDTDigitalGraphQL crearClienteCDTDigitalGraphQl(@Name("crear") Clie clienteCDTDigitalType){
+    public ClienteCDTDigitalGraphQL crearClienteCDTDigitalGraphQl(@Name("crear") ClienteCDTDigitalGraphQL clienteCDTDigitalType){
         LOG.info("Inicia el proceso de crearClienteCDTDigitalGraphQl Impl");
         ClienteCDTDigitalGraphQL clienteCDTDigitalGraphQL = null;
         try{
@@ -44,14 +44,14 @@ public class ClienteCDTDigitalGraphQLController{
             LOG.error("Error en el proceso de crearClienteCDTDigitalGraphQl Impl: " + e.getMessage());
         }
         LOG.info("Finaliza el proceso de crearClienteCDTDigitalGraphQl Impl");
-        return clienteCDTDigital;
+        return clienteCDTDigitalGraphQL;
     }
 
     @Mutation("eliminarCliente")
     public void  eliminarClienteCDTDigitalGraphQl(@Name("id") Integer id){
         LOG.info("Inicia el proceso de crearClienteCDTDigitalGraphQl Impl");
         try{
-            clienteCDTDigitalGraphQlImpl.eliminarClienteCDTDigitalImpl(id.longValue());
+            clienteCDTDigitalGraphQLImpl.eliminarClienteCDTDigitalImpl(id.longValue());
         }catch(ApplicationException e){
             LOG.error("Error en el proceso de crearClienteCDTDigitalGraphQl Impl: " + e.getMessage());
         }
