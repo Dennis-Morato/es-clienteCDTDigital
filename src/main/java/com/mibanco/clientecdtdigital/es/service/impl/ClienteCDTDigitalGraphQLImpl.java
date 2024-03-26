@@ -65,10 +65,10 @@ public class ClienteCDTDigitalGraphQLImpl implements IClienteCDTDigitalGraphQL {
     public void editarClienteCDTDigitalImpl(Long id ,ClienteCDTDigitalGraphQL clienteCDTDigitalGraphQL ){
         LOG.info("Inicia el proceso de editar Cliente CDT Digital graphQL Impl");
         try{
-            clienteCDTDigitalGraphQL = clienteCDTDigitalGraphQLDao.findById(id);
-            clienteCDTDigitalGraphQL.setFechaNacimientoAno(clienteCDTDigitalGraphQL.getFechaNacimientoAno());
-            clienteCDTDigitalGraphQL.setFechaNacimientoMes(clienteCDTDigitalGraphQL.getFechaNacimientoMes());
-            clienteCDTDigitalGraphQL.setFechaNacimientoDia(clienteCDTDigitalGraphQL.getFechaNacimientoDia());
+            ClienteCDTDigitalGraphQL clienteCDTDigitalGraphQL = clienteCDTDigitalDao.findById(id);
+            cliente.setFechaNacimientoAno(clienteUpdate.getFechaNacimientoAno());
+            cliente.setFechaNacimientoMes(clienteUpdate.getFechaNacimientoMes());
+            cliente.setFechaNacimientoDia(clienteUpdate.getFechaNacimientoDia());
         }catch(ApplicationException e){
             LOG.error(Constant.ERROR_SERVICIO + e.getMessage() + "editar Cliente CDT Digital graphQL Impl");
         }
